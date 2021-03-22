@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Entities build="b243" majorVersion="9" minorVersion="0" modelPersistenceProviderPackage="H2PersistenceProviderPackage" revision="3" schemaVersion="1102" universal="">
+  <DataShapes>
+    <DataShape name="ds_PositionalGrid">
+      <FieldDefinitions>
+        <FieldDefinition aspect.isPrimaryKey="true" baseType="STRING" description="" name="id" ordinal="1"/>
+        <FieldDefinition aspect.isPrimaryKey="false" aspect.units="px" baseType="NUMBER" description="" name="centerX" ordinal="2"/>
+        <FieldDefinition aspect.isPrimaryKey="false" aspect.units="px" baseType="NUMBER" description="" name="centerY" ordinal="3"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="HYPERLINK" description="" name="image" ordinal="4"/>
+        <FieldDefinition aspect.isPrimaryKey="false" baseType="HYPERLINK" description="" name="selectedImage" ordinal="5"/>
+      </FieldDefinitions>      
+    </DataShape>
+  </DataShapes>
+</Entities>

@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Positional Grid</title>
+    <style>
+      #div1 {
+        width: 300px;
+        height: 300px;
+        background: red
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width:300px;height:100px"></div>
+    <div id="div1">
+      <canvas id="div2"></canvas>
+    </div>
+
+    <script>
+      var scale, x, y;
+      var markerX = 118;
+      var markerY = 94;
+      var div = document.getElementById("div1");
+      var canvas = document.getElementById("div2");
+      canvas.onmousemove = function (event) {
+        var inside = markerRect.top <= event.offsetY && event.offsetY <= markerRect.bottom && markerRect.left <= event.offsetX && event.offsetX <= markerRect.right;
+        canvas.style.cursor = inside ? "move" : "default";
+        //canvas.style.cursor = inside ? "pointer" : "default";
+
+        var rect = event.target.getBoundingClientRect();
+        markerX = (event.pageX - rect.left - x) / scale;
+        markerY = (event.pageY - rect.top - y) / scale;
+        console.log(markerX + "," + markerY);
+        
+        drawPlanimetria();
+      };
+
+      var background = new Image();
+      background.onload = loadMarker;
+
+      var markerRect = {top: 0, left: 0, bottom: 0, right: 0};
+
+      var marker = new Image();
+      marker.onload = drawPlanimetria;
+
+      //background.src = 'Casa.PNG';
+      background.src = 'ninfeeNotDetailed.svg';
+
+      function loadMarker() {
+        //marker.src = 'upload.png';
+        marker.src = 'Freesample.svg';
+      }
+
+      function drawPlanimetria() {
+        canvas.width = div.offsetWidth;
+        canvas.height = div.offsetHeight;
+
+        var ctx = canvas.getContext('2d');
+        scale = Math.min(canvas.width / background.width, canvas.height / background.height);
+
+        var drawW = scale * background.width;
+        var drawH = scale * background.height;
+        x = canvas.width > drawW ? (canvas.width - drawW) / 2 : 0;
+        y = canvas.height > drawH ? (canvas.height - drawH) / 2 : 0;
+        ctx.drawImage(background, x, y, drawW, drawH);
+
+        drawW = scale * marker.width;
+        drawH = scale * marker.height;
+        var xx = x + scale * markerX - drawW / 2;
+        var yy = y + scale * markerY - drawH / 2;
+        ctx.drawImage(marker, xx, yy, drawW, drawH);
+
+        markerRect = {top: yy, left: xx, bottom: yy + drawH, right: xx + drawW};
+      }
+
+      new ResizeObserver(drawPlanimetria).observe(div);
+    </script>
+  </body>
+</html>

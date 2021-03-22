@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entities>
+  <ExtensionPackages>
+    <ExtensionPackage 
+      name="PositionalGridWidget"
+      packageVersion="1.0.0"
+      vendor="Accenture Italy - Industry X"
+      description="Extension allowing to view a data grid where position is the fundamental component (the name is freely inspired by 'Pep Guardiola's Positional Soccer Grid')"
+      minimumThingWorxVersion="8.3.0"
+      dependsOn=""> 
+    </ExtensionPackage>
+  </ExtensionPackages>
+  
+  <Widgets>
+    <Widget name="positionalgrid"> 
+      <UIResources> 
+        <FileResource description="" file="positionalgrid.ide.js" isDevelopment="true" isRuntime="false" type="JS"/> 
+        <FileResource description="" file="positionalgrid.ide.css" isDevelopment="true" isRuntime="false" type="CSS"/> 
+        <FileResource description="" file="positionalgrid.runtime.js" isDevelopment="false" isRuntime="true" type="JS"/> 
+        <FileResource description="" file="positionalgrid.runtime.css" isDevelopment="false" isRuntime="true" type="CSS"/> 
+      </UIResources> 
+    </Widget>     
+  </Widgets>
+</Entities>
