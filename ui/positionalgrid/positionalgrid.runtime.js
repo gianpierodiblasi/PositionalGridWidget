@@ -176,6 +176,11 @@ TW.Runtime.Widgets.positionalgrid = function () {
 
       images[background] = new Image();
       images[background].onload = thisWidget.loadImages;
+      images[background].onerror = function () {
+        var message = 'PositionalGrid - unabled to load the background = ' + background;
+        TW.log.error(message);
+        console.error(message);
+      };
       images[background].src = background;
       return;
     }
@@ -189,6 +194,11 @@ TW.Runtime.Widgets.positionalgrid = function () {
 
           images[data.rows[index].image] = new Image();
           images[data.rows[index].image].onload = thisWidget.loadImages;
+          images[data.rows[index].image].onerror = function () {
+            var message = 'PositionalGrid - unabled to load the image = ' + data.rows[index].image;
+            TW.log.error(message);
+            console.error(message);
+          };
           images[data.rows[index].image].src = data.rows[index].image;
           return;
         } else if (data.rows[index].selectedImage && !images[data.rows[index].selectedImage]) {
@@ -198,6 +208,11 @@ TW.Runtime.Widgets.positionalgrid = function () {
 
           images[data.rows[index].selectedImage] = new Image();
           images[data.rows[index].selectedImage].onload = thisWidget.loadImages;
+          images[data.rows[index].selectedImage].onerror = function () {
+            var message = 'PositionalGrid - unabled to load the selectedImage = ' + data.rows[index].selectedImage;
+            TW.log.error(message);
+            console.error(message);
+          };
           images[data.rows[index].selectedImage].src = data.rows[index].selectedImage;
           return;
         }
