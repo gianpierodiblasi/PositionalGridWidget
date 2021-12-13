@@ -26,7 +26,7 @@ TW.IDE.Widgets.positionalgrid = function () {
           'baseType': 'HYPERLINK',
           'isBindingTarget': true,
           'isEditable': true,
-          'description': 'The background image'
+          'description': 'The background image, raster (png, jpeg, etc.) or vectorial (svg, etc.)'
         },
         'data': {
           'isVisible': true,

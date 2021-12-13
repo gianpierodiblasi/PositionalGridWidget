@@ -16,6 +16,7 @@ TW.Runtime.Widgets.positionalgrid = function () {
 
   this.runtimeProperties = function () {
     return {
+      'supportsAutoResize': true,
       'needsDataLoadingAndError': false
     };
   };
