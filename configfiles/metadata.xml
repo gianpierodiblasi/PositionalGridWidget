@@ -4,7 +4,7 @@
     <ExtensionPackage 
       name="PositionalGridWidget"
       packageVersion="1.2.1"
-      vendor="Accenture Italy - Industry X"
+      vendor="Gianpiero Di Blasi"
       description="Extension allowing to view a data grid where position is the fundamental component (the name is freely inspired by 'Pep Guardiola's Positional Soccer Grid')"
       minimumThingWorxVersion="8.3.0"
       dependsOn=""> 
