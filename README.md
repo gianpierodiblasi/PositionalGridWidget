@@ -1,6 +1,8 @@
 # PositionalGridWidget
 An extension allowing to view a data grid where position is the fundamental component.
 
+**This Extension is provided as-is and without warranty or support. It is not part of the PTC product suite and there is no PTC support.**
+
 ## Description
 This extension provides a widget allowing to view a data grid where position is the fundamental component (the name is freely inspired by 'Pep Guardiola's Positional Soccer Grid'). The grid is described by the ds_PositionalGrid DataShape (see below); the DataShape structure is mandatory, but it can be extended with additional fields.
 
